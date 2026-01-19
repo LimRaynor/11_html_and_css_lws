@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_표 관련 태그</title>
+  <style>
+      /* css 정의 태그 */
+      tfoot {
+          background-color: red;
+      }
+
+      thead {
+          background-color: darkred;
+      }
+
+      tbody {
+          background-color: orangered;
+      }
+  </style>
+</head>
+<body>
+  <!-- <table> <tr> <td> 순인 테이블 태그를 사용해 만듬  -->
+  <h1>가본적인 표 만들기 </h1>
+  <table border="1"> <!-- table, td에 1px짜리 테두리 추-->
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>조</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>아</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>여</td>
+    </tr>
+    <tr>
+      <td>#</td>
+      <td>0</td>
+      <td>*</td>
+      <td>굿</td>
+      <td>
+        따봉 <br><br><br>
+      </td>
+    </tr>
+  </table>
+
+  <hr>
+  <ul>
+    <li>table tag : 표 영역 생성 태그</li>
+    <li>tr tag : 표의 행 영역을 나타내는 태그</li>
+    <li>td tag : 표의 열 (데이터 작성 영역)을 나타내는 태그</li>
+    <li>th tag : 표의 제목을 나타내느 태그</li>
+    <li>caption tag : 표의 설명을 나타내느 태그</li>
+  </ul>
+
+  <table border="1">
+    <caption>
+      <strong>web broswer type</strong>
+    </caption>
+    <tr>
+      <th>Broswer</th>
+      <th>Company</th>
+      <th>HomePage</th>
+    </tr>
+    <tr>
+      <td>Ege</td>
+      <td>MS</td>
+      <td>
+        <a href="http://www.microsoft.com">이동하기</a>
+      </td>
+    </tr>
+    <tr>
+      <td>crome</td>
+      <td>Google</td>
+      <td>
+        <a href="http://www.google.com">이동하기</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Sapari</td>
+      <td>Apple</td>
+      <td>
+        <a href="http://www.apple.com">이동하기</a>
+      </td>
+    </tr>
+    <tr>
+      <td>FireFox</td>
+      <td>Mozilla</td>
+      <td>
+        <a href="http://www.mozilla.org">이동하기</a>
+      </td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h1>Table 영역전개구분</h1>
+  <ul>
+    <li>thead tag : Table열의 제목 행 영역</li>
+    <li>tbody tag : 실제 Table의 내용 영역</li>
+    <li>tfoot tag : Table 하단에 합계 등을 작성하는 영역</li>
+  </ul>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Namea</th>
+        <th>E-Mail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Donald</td>
+        <td>USA@naver.com</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Putin</td>
+        <td>Russia@naver.com</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Kang</td>
+        <td>KOREA@naver.com</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr >
+        <th colspan="3">총원</th>
+        <th></th>
+        <th>3명</th>
+      </tr>
+    </tfoot>
+  </table>
+
+  <hr>
+  <h1>행 병합 / 열 병합</h1>
+  <ul>
+    <lb>행 병합 (rowspan) : 하나의 셀이 여러 행(세로)을 차지하게 됨</lb>
+    <lb>열 병합 (colspan) : 하나의 셀이 여러 열(가로)을 차지하게 함</lb>
+  </ul>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Namea</th>
+        <th>E-Mail</th>
+      </tr>
+      <th colspan="4">회원정보 테이블</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th rowspan="3">회원정보</th>
+        <td>1</td>
+        <td>Donald</td>
+        <td>USA@naver.com</td>
+      </tr>
+      <tr>
+        <td colspan="2">2</td>
+        <td>Putin</td>
+        <td>Russia@naver.com</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Kang</td>
+        <td>KOREA@naver.com</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr ">
+        <th colspan="3">총원</th>
+        <th></th>
+        <th>3명</th>
+      </tr>
+    </tfoot>
+  </table>
+
+  <hr>
+  <table border="1">
+    <tbody>
+      <tr>
+        <td colspan="2" rowspan="2">사진</td>
+        <td width="80px">이름</td>
+        <td width="200px"></td>
+      </tr>
+      <tr>
+        <td>연락처</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td width="70px">주소</td>
+        <td colspan="3"></td>
+      </tr>
+      <tr>
+        <td height="200px">자기소개</td>
+        <td colspan="3"></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</body>
+</html>
