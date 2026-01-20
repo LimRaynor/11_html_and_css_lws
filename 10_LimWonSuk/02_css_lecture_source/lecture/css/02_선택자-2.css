@@ -1,0 +1,177 @@
+/* 기본 속성 선택자 */
+
+/* [속성명 = 속성값] : 속성명과 속성 값이 일치하는 요소를 모두 선택 */
+/*[name = name1 name5 name6] {
+    background-color: red;
+}*/
+
+[name = name2] {
+    background-color: orange;
+}
+
+[name = name3] {
+    background-color: yellow;
+}
+
+[name=name4] {
+    background-color: cyan;
+}
+
+/*
+ [속성명~ = 속성값] : 속성 안의 값이 특정 단어를 포함하면 선택 (띄어쓰기 단위로 구분)
+*/
+div[name~ = name = name1 name5 name6] {
+background-color: red;
+}
+
+/*  [속성명| = 속성값] : 속성 안의 값이 특정 값과 일치하거나
+       "-" 문자가 뒤에 작성된 요소를 선택  */
+div[class|=class]{
+    background-color: green;
+}
+
+/* [속성명 ^= 속성값] : 접두사로 속성값이 포함된 요소를 선택
+ ^ == 캐럿(시작,앞)
+ */
+
+/*
+div [name^=name]{
+    font-size: 32px;
+}*/
+div[name^=name] {
+    font-size: 32px;
+}
+
+/* [속성명$=속성값] : 접미사로 속성값이 포함된 요소를 선택
+ $ == 끝(뒤)
+*/
+div[class$=class] {
+    font-weight: bold;
+    font-style: italic;
+
+    /* [속성명*=속성값] : 특정 값이 속성값에 포함된 요소를 선택 */
+    /*div[class*=dic]{
+    color: azure}
+    }*/
+
+    div[class*=div] {
+        color: red;
+    }
+}
+
+/* 자속(자식) 선택자 */
+#test1>h4 {
+    background-color: crimson;
+}
+/* 선택자를 거듭 잡성 가능 */
+#test1 > div > ul > li {
+    background-color: yellow;
+}
+
+/* 후손 선택자 */
+#test1 ul{ /* test1 하위의 모든 ul 들*/
+    background-color: rgba(255, 165, 0, 0.94);
+}
+
+/* 동위 선택자 */
+#div-test1{
+    background-color: orangered;
+}
+/* #div-test1의 동위 관계 요소 중 뒤쪽 첫 번째 div태그 요소 선택  -> test2*/
+#div-test1 + div{
+    background-color: orange;
+}
+/* #div-test2의 동위 관계 요소 중 뒤쪽에 있는 모든 div 태그 요소 선택  -> test3,4,5*/
+/*
+    #div-test2 ~ div{
+background-color: yellow;
+}*/
+
+    /* 체크박스 커스텀 하기 */
+#check + label{
+    width: 30px; /* 가로 */
+    height: 30px; /* 높이 */
+    border: 1px solid black; /* 테두리 */
+    display: in line-block; /* 크기 지정 가능한 inline요소 */
+    border-radius: 50%; /* 모서리 곡률 */
+    user-select: none; /* 사용자 선택 불가 (드래그 금지) */
+    cursor: pointer;
+}
+#check:checked + label{
+background-image: url("../images/checkbox.png");
+    background-size: cover; /* 배경 이미지 크기를 요소에 맞춤 */
+}
+
+#check{
+    display: none; /* 요소를 화면에 표시하지 않음 (존재는 하는 상태)*/
+}
+
+/* 반응 선택자 */
+#active-test, #hover-test{
+    width: 150px; /* w150 tab */
+    height: 150px; /* h150 tab */
+    background-color: red;
+}
+
+/* :active */
+#active-test:active{
+    background-color: orange;
+    transition-duration: 0.2s;
+    color: yellow;
+    scale: 90%; /* 크기 */
+}
+
+/* :hover */
+#hover-test:hover{
+    background-color: green;
+    transition-duration: 1s;
+}
+
+/*  상태 선택자 */
+
+/*  :checked -> 체크가 되었을 때 (radio, checkbox) */
+input[name=fruits]:checked{
+    width: 30px;
+    height: 30px;
+    background-color: red; /* 안바뀌어서 전에 이미지로 씀 */
+}
+
+/* :focus -> inpuit에 초점이 맞춰 졌을 때 (text 형태 input) */
+#userId:focus, #userPwd:focus{
+    /*background-color: orange;*/
+    outline: none;
+    border: none;
+    border-bottom: 2px solid orangered;
+}
+
+/* :enabled, :disabled -> 활성화, 비활성화 */
+/*option:anabled {
+    background-color: dodgerblue;
+}
+option:disabled {
+    background-color: darkslateblue;
+}
+intion:disabled {
+    background-color: purple;
+}
+button:disabled {
+    background-color: green;
+}*/
+option:enabled {
+    background-color: springgreen;
+}
+
+option:disabled {
+    background-color: crimson;
+}
+
+input:disabled {
+    background-color: red;
+}
+
+button:disabled {
+    background-color: blue;
+}
+
+
+

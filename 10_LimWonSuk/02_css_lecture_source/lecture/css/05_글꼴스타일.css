@@ -1,0 +1,120 @@
+/* 글골 스타일
+
+*/
+#ff1 {
+    font-family: "궁서";
+}
+
+/* ~~체 == monospace (고정된 글자 폭) */
+#ff2 {
+    font-family: "궁서체";
+}
+
+/* 여러 글꼴을 작성하여 앞쪽 글꼴이 없으면
+    뒤쪽 글꼴을 적용 */
+#ff3 {
+    font-family: "짱구아빠체", "맑은궁서체", "굴림체";
+}
+
+/* 웹 폰트 */
+@font-face {
+    font-family: 'KerisKeduLine';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-3@1.0/KERISKEDU_Line.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+#ff4 {
+    font-family: 'KerisKeduLine';
+}
+
+/*.great-vibes-regular*/
+#ff5 {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* 폰트 적용 방법 */
+@font-face {
+    font-family: "KERISKEDU_Line";
+    src: url("../resources/KERISKEDU_Line.ttf");
+}
+
+#ff6 {
+    font-family: 'KERISKEDU_Line';
+}
+
+/* font-size : 글꼴 크기 */
+#size1 {
+    font-size: 32px; /* 브라우저 기본 폰트 사이즈 == 16px*/
+}
+
+#size2 {
+    /* em : 부모 요소의 font-size 비례한 크기를 지정 */
+    /*font-size: 2em; !* 부모 16px의 2배*!*/
+
+    font-size: 3.4em; /* 부모 16px의 1.4배*/
+}
+
+#size3 {
+    /* % : 부모 요소의 font-size 비례한 크기(%단위)를 지정*/
+    font-size: 220%; /* 부모 16px의 2배*/
+}
+
+#size4 {
+    /* % : 부모 요소의 font-size 비례한 크기(%단위)를 지정*/
+    font-size: 13pt;
+}
+
+#size4 {
+    /* 1pt == 1/72 in*/
+    font-size: 24pt;
+}
+
+/*:root {
+    font-size: 10px;
+    --main-color: yellow; !* 변수 선언 *!
+}*/
+
+#size5 {
+    /* rem : :root에 정의된 fomt-size에 대해 비례한 단위 */
+    font-size: 3rem; /* 10px * 4 */
+    /*
+    background-color: var(--main-color);
+    */
+}
+
+/* 글꼴 두께 지정 스타일 */
+#fw1 {
+    font-weight: lighter;
+}
+
+#fw2 {
+    font-weight: 500; /* 기본폰트 굵기 400 */
+}
+
+/* 작은 대문자로 변경 */
+#fv {
+    font-variant: small-caps;
+}
+
+/* 꼴 스타일(기울임) */
+#fs1 {
+    /* 폰트 내 기울어진 글자 이미지 불러오기*/
+    font-style: italic;
+}
+
+#fs2 {
+    /* 정상 글자를 시스템이 "억지로" 기울이는 것*/
+    font-style: oblique;
+}
+
+/* font 속성을 이용한 일괄 설정 */
+#f1 {
+    font: 20px "궁서체";
+}
+
+#f2 {
+    font: italic bold 25px/70px "굴림";
+}

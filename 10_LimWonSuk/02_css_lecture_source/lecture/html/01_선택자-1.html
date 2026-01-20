@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_선택자-1</title>
+  <!-- link 태그 : 외부 CSS 파일을 현재 HTML에 연결하는 태그-->
+  <link rel="stylesheet" href="../css/01_선택자-1.css">
+</head>
+<body>
+  <h1>CSS 기본 선택자</h1>
+  <p>
+    선택자(Selector)
+    특정한 HTML 요소를 선택할 때 사용하는 기호
+
+  <hr>
+  <h2>tag selector</h2>
+  <pre>
+   - HTML문서 내에 지정된 태그를 갖는 모든 요소를 선택하는 선택자
+  </pre>
+
+  <p>
+    p{color : red;} 작성하기
+  </p>
+  <hr>
+
+  <h2 id="id-title">ID 선택자 (#) </h2>
+  <pre>
+    - HTML문서 내에 해당하는 아이디 속성을 가진 태그만 선택할 때 사용하는 선택자
+       - HTML문서 내에 중복되는 아이디를 가지는 요소는 존재해선 안된다!
+
+  </pre>
+
+  <pre id="test1">
+    [작성법]
+    #id속성값 { css code; }
+  </pre>
+
+  <hr>
+  <h2>class selector(.)</h2>
+  <pre>
+    HTML 문서 내에 여러개의 요소를 동일한 클래슴명을 부여하고
+    선택할 때 사용한다. (여러요소 선택시 주로 사용)
+    [작성법]
+    .class속성명{ css code; }
+  </pre>
+  <!-- ul>li.class1*5 -->
+  <ul>
+    <li class="class1"></li>
+    <li class="class1"></li>
+    <li class="class1"></li>
+    <li class="class1"></li>
+    <li class="class1"></li>
+  </ul>
+
+  <!-- ul>li.class1{클래스 선택자 테스트$}*5 -->
+  <ul>
+    <li class="class1">클래스 선택자 테스트1</li>
+    <li class="class1">클래스 선택자 테스트2</li>
+    <li class="class1">클래스 선택자 테스트3</li>
+    <li class="class1">클래스 선택자 테스트4</li>
+    <li class="class1">클래스 선택자 테스트5</li>
+  </ul>
+
+  <ul>
+    <li class="class1">클래스 선택자 테스트1</li>
+    <li class="class2">클래스 선택자 테스트2</li>
+    <li class="class1">클래스 선택자 테스트3</li>
+    <li class="class2">클래스 선택자 테스트4</li>
+    <li class="class1">클래스 선택자 테스트5</li>
+  </ul>
+
+  <hr>
+  <h1>선택자 왜 중요한가?? </h1>
+  <pre>
+    js에서 css 선택자가 사용되기 때문에 잘 알아두어야 한다!
+  </pre>
+  <!--   ul>li.list-item{list item$}*5 -->
+  <ul>
+    <li class="list-item">list item1</li>
+    <li class="list-item">list item2</li>
+    <li class="list-item">list item3</li>
+    <li class="list-item">list item4</li>
+    <li class="list-item">list item5</li>
+  </ul>
+  <!-- id="btn 가 없어서 실행이 안됨-->
+  <button type="button" id="btn">눌러!</button>
+
+  <!--    <script>
+        const btn = document.querySelector("#btn");/* # == id를 나타냄*/
+        btn.onclick = () => {
+            const items + document.querySelector(".list-item") /* . == 선택자 */
+            for(let i=0; i<items.length; i++){
+                items[i].style.color="red";
+            }
+        }
+      </script>-->
+
+  <script>
+      const btn = document.querySelector("#btn");
+      btn.onclick = () => {
+          const items = document.querySelectorAll(".list-item");
+          for (let i = 0; i < items.length; i++) {
+              items[i].style.color = "red";
+          }
+      }
+  </script>
+
+</body>
+</html>
